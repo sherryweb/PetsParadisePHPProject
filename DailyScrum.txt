@@ -1,0 +1,236 @@
+
+2021/02/12 JianDong Han
+1. Done / not done since last scrum:
+-  Discuss and Create project plan
+-  Database Design 
+-  Finalize the project proposal and submit it 	  
+-  Create Sample mockups
+
+2. To do until next Scrum(2021/02/15):
+-  Configue the bitbucket repository
+-  Configure the trello board and discuss the user sotries to be implemented 
+-  Finish the hosting service configuration and the FTP service configuration
+-  Finalize the Database design
+-  Update the user stories in Trello boards
+-  Discuss the tasks division
+
+3. Need assistance / figure things out
+
+2021/02/12 Tingting Song
+1. Done since last scrum
+-  Finalize project proposal
+-  Discuss database design
+
+2. Plan until next Scrum(2021/02/15):
+-  Discuss the user stories
+-  Updata trello boards
+-  Discuss tasks division 
+
+3. Need assistance / figure things out
+
+
+2021/02/15 JianDong Han
+1. Done / not done since last scrum:
+-  Configue the bitbucket repository
+-  Configure the trello board and discuss the user stories to be implemented 
+-  Finish the hosting service configuration and the FTP service configuration
+-  Finalize the Database design
+-  Update the user stories in Trello boards
+-  Discuss the tasks division
+
+2. To do until next Scrum(2021/02/15):
+-  Finish the hosting service configuration and the FTP service configuration
+-  Finalize the Database design
+-  working on the index.php and build the program main skeleton
+-  working on the master.html.twig and design the main appereance style and content layout 
+
+3. Need assistance / figure things out
+
+
+2021/02/15 Tingting Song
+1. Done since last scrum
+-  Discuss tasks division 
+-  Discuss Database design
+-  Updata user stories in trello boards
+
+2. Plan until next Scrum(2021/02/15):
+-  Finalize urls, create php files
+-  working on the user.html.twig
+
+
+3. Need assistance / figure things out
+
+
+2021/02/16 JianDong Han
+1. Done / not done since last scrum:
+-  Finish the hosting service configuration and the FTP service configuration
+-  Finalize the Database design
+-  working on the index.php and build the program main skeleton
+-  working on the master.html.twig and design the main appereance style and content layout 
+-  Integrate the BootStrap carousel and Form validation library
+-  Implement the user registration module  
+
+2. To do until next Scrum(2021/02/15):
+-  Finish the hosting service configuration and the FTP service configuration
+-  working on the addpets modules and related twig templates
+-  working on the adoption modules and related twig templates 
+
+3. Need assistance / figure things out
+
+
+2021/02/16 Tingting Song
+1. Done since last scrum
+-  Finalize urls, create php files
+-  working on the user.html.twig
+
+2. Plan until next Scrum(2021/02/15):
+-  working on the registration modules and related twig templates
+-  working on the login modules and related twig templates
+-  working on the admin modules and related twig templates
+-  working on the add activities modules and related twig templates
+
+3. Need assistance / figure things out
+
+
+
+2021/02/17 JianDong Han
+1. Done / not done since last scrum:
+-  Finalize the Database design
+-  working on the addpets modules and related twig templates
+-  working on the adoption modules and related twig templates 
+
+2. To do until next Scrum(2021/02/15):
+-  Finish the hosting service configuration and the FTP service configuration
+-  working on the donation modules and related twig templates
+-  working on the foster modules and related twig templates 
+-  working on the communication modules and related twig templates 
+
+3. Need assistance / figure things out
+
+
+2021/02/17 Tingting Song
+1. Done since last scrum
+-  create login modules and related twig templates
+-  create  admin modules and related twig templates
+-  create  activities modules and related twig templates
+
+2. Plan until next Scrum(2021/02/15):
+-  working on the login modules and related twig templates
+-  working on the admin modules and related twig templates
+-  working on the add activities modules and related twig templates
+
+3. Need assistance / figure things out
+
+
+2021/02/18 JianDong Han
+1. Done / not done since last scrum:
+-  Finish the hosting service configuration and the FTP service configuration
+-  upload all project files to the hosting server,upload the database.
+-  working on the donation modules and related twig templates
+-  working on the foster modules and related twig templates 
+-  working on the communication modules and related twig templates 
+
+2. To do until next Scrum(2021/02/15):
+-  Implement the session information manipulation 
+-  Debug the templates bugs in some modules  
+-  Implememt the staff operation modules 
+
+3. Need assistance / figure things out
+
+
+2021/02/18 Tingting Song
+1. Done since last scrum
+-  add login modules and related twig templates
+-  working on the admin modules and related twig templates
+-  working on the add activities modules and related twig templates 
+
+2. Plan until next Scrum(2021/02/15):
+-  Debug the templates bugs in admin modules  
+-  Implememt the admin modules  
+-  Implememt login function
+
+3. Need assistance / figure things out
+
+2021/02/19 JianDong Han
+1. Done / not done since last scrum:
+-  Implement the session information manipulation 
+-  Debug the templates bugs in some modules  
+-  Implememt the staff operation modules 
+-  Implememt the Ajax program to perform the email unique validation
+
+2. To do until next Scrum(2021/02/15):
+-  Research the Charts features  
+-  Implememt the staff operation modules
+
+3. Need assistance / figure things out
+
+
+2021/02/19 Tingting Song
+1. Done since last scrum
+-  Implement login function
+-  Implement user, activity model
+-   
+
+2. Plan until next Scrum(2021/02/15):
+-  Fix bugs in login moduel
+-  Fix bugs in user, activity model
+-  Research facebook, google login
+
+3. Need assistance / figure things out
+- peer testing
+
+2021/02/22 JianDong Han
+1. Done / not done since last scrum:
+-  Research the Charts features  
+-  Implememt the staff deal with adoption requests.
+-  Implemet the staff deal with communication requests.
+-  Implemet the staff task lists. 
+
+2. To do until next Scrum(2021/02/15):
+-  Research the Charts features
+-  Update the login status control
+
+3. Need assistance / figure things out
+
+
+2021/02/22 Tingting Song
+1. Done since last scrum
+-  Fix bugs in login moduel
+-  Fix bugs in user, activity model
+-  Research facebook, google login
+
+2. Plan until next Scrum(2021/02/15):
+-  implement facebook, google login
+-  implement admin other feature
+
+3. Need assistance / figure things out
+- peer testing
+
+
+2021/02/23 JianDong Han
+1. Done / not done since last scrum:
+-  Fix some bugs in different modules    
+-  Update the visual appereance of all pages 
+-  Test different modules
+-  Peer - testing 
+-  Uploading the code to hosting service 
+
+2. To do until next Scrum(2021/02/15):
+-  Prepare the project presentation documents
+-  Project presentation
+
+3. Need assistance / figure things out
+-  peer testing
+
+2021/02/22 Tingting Song
+1. Done since last scrum
+-  
+-  
+-  
+
+2. Plan until next Scrum(2021/02/15):
+-  
+-  
+
+3. Need assistance / figure things out
+- peer testing

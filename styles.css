@@ -1,0 +1,35 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#centeredContent {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 500px; /* 960px; */
+    background-color: white;
+}
+
+.footer {
+    text-align: center;
+}
+
+
+.errorMessage {
+    text-align: left;
+    font-weight: bold;
+    background-color: yellow;
+    color: red;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.flashMessage {
+    background-color: green;
+    font-weight: bold;
+    width: auto;
+}
