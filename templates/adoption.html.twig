@@ -1,0 +1,129 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Adoption{% endblock %} 
+
+{% block content %}
+
+{% if errorList %}
+<div class="container">
+    <ul>
+    {% for error in errorList %}
+        <li class="errorMessage">{{ error }}</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Adoption Request Submission</h2>
+            <p class="lead">The first family that fits the animal’s needs will get to adopt them. ​All animals are sterilized, vaccinated, de-wormed, and micro-chipped before going up for adoption..</p>
+        </div>
+  
+        <div class="row g-3">
+
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="text-muted">Pet Information</span>
+                  <span class="badge bg-secondary rounded-pill">{{ p.id }}</span>
+                </h4>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="../{{p.ImageFolderPath}}" width="100%" height="225">
+                        <div class="card-body">
+                            <p class="card-text">{{p.description}}</p>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <p class="card-text">Breed: {{p.breed}}</p>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <p class="card-text">Birthday:  {{p.birthday}}</p>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <p class="card-text">Size: {{p.size}} inches.&nbsp;&nbsp;&nbsp; Weight: {{p.weight}} pounds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Request information</h4>
+                
+                <form class="needs-validation" method="POST" novalidate>
+                    <div class="row g-3">
+                        <hr class="my-4">
+                        <div class="col-md-5">
+                            <label for="type" class="form-label">Adoption type</label>
+                            <select class="form-select" id="type" name="type"  value="{{ v.type }}"required>
+                                <option value=0>Choose...</option>
+                                <option value=1>Adoption</option>
+                                <option value=2>Fostering</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid adoption type.
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <label for="begindate" class="form-label">Begin Date</label>
+                            <input type="date" class="form-control" id="begindate" placeholder=""  name="begindate" value="{{ v.begindate }}" required>
+                            <div class="invalid-feedback">
+                                Please enter the begin date.
+                            </div>
+                        </div>
+  
+                        <div class="col-12">
+                            <label for="enddate" class="form-label">End Date</label>
+                            <input type="date" class="form-control" id="enddate" placeholder=""  name="enddate" value="{{ v.enddate }}" required>
+                            <div class="invalid-feedback">
+                                Please enter the end date.
+                            </div>
+                        </div>                      
+
+                        <div class="col-12">
+                            <label for="notes" class="form-label">Notes</label>
+                            <textarea rows="5" class="form-control" id="notes" placeholder="" name="notes" value="{{ v.notes }}"></textarea>
+                            <div class="invalid-feedback">
+                                Please enter the notes.
+                            </div>
+                        </div> 
+
+                    </div>
+  
+                    <hr class="my-4">
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        {% if c %}
+        <hr class="my-4">
+        <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3">Communications about this pet</h4>
+            {% for com in c %}
+                <!--
+                {% if com.questions %}    
+                -->
+                    <p><i><b>Post by {{ com.userId }} on {{ com.questionDate }}</b></i></p>
+                    <p>{{ com.questions }}</p>
+                <!--
+                {% endif %}    
+                {% if com.answers %}    
+                -->
+                    <p><i><b>Answers Post by {{ com.staffId }} on {{ com.answerDate }}</b></i></p>
+                    <p>{{ com.answers }}</p>
+                <!--
+                {% endif %}
+                -->
+            {% endfor %}
+        </div>
+        {% endif %}
+
+    </main>
+
+{% endblock content %}

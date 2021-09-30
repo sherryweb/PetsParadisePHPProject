@@ -1,0 +1,81 @@
+{% extends "staff.html.twig" %}
+
+{% block title %}Staff Tasks List{% endblock %} 
+
+{% block content %}
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        {% if adoptionlist %}
+        <div>
+            <div class="bd-example">
+                <div>
+                    <h4 class="mb-3">Adoption/Foster request information to be processes</h4>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">UserId</th>
+                            <th scope="col">PetId</th>
+                            <th scope="col">IssueDate</th>
+                            <th scope="col">Notes</th>
+                            <th scope="col">Operation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for a in adoptionlist %}
+                        <tr class="table-info">
+                            <th scope="row">{{ a.id }}</th>
+                            <td>{{ a.userId }}</td>
+                            <td>{{ a.petId }}</td>
+                            <td>{{ a.beginDate }}</td>
+                            <td>{{ a.notes }}</td>
+                            <td><a href="/adoptionconfirm?id={{a.id}}">Process</a></td>
+                        </tr>
+                        {% endfor %}                 
+ 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        {% endif %}
+
+        {% if communicatelist %}
+        <div>
+            <div>
+            <div class="bd-example">
+                <h4 class="mb-3">User's questions to be responed</h4>
+            </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">UserId</th>
+                            <th scope="col">PetId</th>
+                            <th scope="col">IssueDate</th>
+                            <th scope="col">Questions</th>
+                            <th scope="col">Operation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in communicatelist %}
+                        <tr class="table-info">
+                            <th scope="row">{{ c.id }}</th>
+                            <td>{{ c.userId }}</td>
+                            <td>{{ c.petId }}</td>
+                            <td>{{ c.questionDate }}</td>
+                            <td>{{ c.questions }}</td>
+                            <td><a href="/questionresponse?id={{c.id}}">Process</a></td>
+                        </tr>
+                        {% endfor %}                 
+ 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

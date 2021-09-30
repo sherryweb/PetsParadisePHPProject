@@ -1,0 +1,145 @@
+{% extends "staff.html.twig" %}
+
+{% block title %}Pets Registration{% endblock %} 
+
+{% block content %}
+
+{% if errorList %}
+<div class="container">
+    <ul>
+    {% for error in errorList %}
+        <li class="errorMessage">{{ error }}</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Pets Registration</h2>
+            <p class="lead">The By-law Concerning Domestic Animals sets out rules of conduct and civic-mindedness meant to keep citizens safe and help humans and pets live together peacefully.Since January 1, 2020, spaying/neutering and microchipping are mandatory for dogs and cats older than 6 months. Rabbits also need to be spayed.</p>
+        </div>
+  
+        <div class="row g-3">
+
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="text-muted">They are our family</span>
+                  <span class="badge bg-secondary rounded-pill">{{ p.id }}</span>
+                </h4>
+        
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="../images/lovepet8.jpg" width="100%" width="100%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Register information</h4>
+                
+                <form class="needs-validation" method="POST" enctype="multipart/form-data" novalidate>
+                    <div class="row g-3">
+ 
+                        <div class="col-12">
+                            <label for="petname" class="form-label">Pet Name</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" id="petname" placeholder="petname" name="petname" value="{{ v.petname }}" required>
+                                <div class="invalid-feedback">
+                                    Pet name is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label for="species" class="form-label">Species</label>
+                            <select class="form-select" id="species" name="species" value="{{ v.species }}" required>
+                                <option value="">Choose...</option>
+                                <option value="Dog">Dog</option>
+                                <option value="Cat">Cat</option>
+                                <option value="Bird">Bird</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a proper species.
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <label for="breed" class="form-label">Breed</label>
+                            <input type="text" class="form-control" id="breed" placeholder="For Example:German shepherd|bulldog|poodle|labrador|husky|...	" name="breed" value="{{ v.breed }}">
+                            <div class="invalid-feedback">
+                                Please enter the pet breed.
+                            </div>
+                        </div>
+  
+                        <div class="col-12">
+                            <label for="birthday" class="form-label">Birthday</label>
+                            <input type="date" class="form-control" id="birthday" placeholder=""  name="birthday" value="{{ v.birthday }}" required>
+                            <div class="invalid-feedback">
+                                Please enter pet birthday.
+                            </div>
+                        </div>
+  
+                        <div class="col-12">
+                            <label for="size" class="form-label">Size(Inches)</label>
+                            <input type="number" class="form-control" id="size" placeholder=""  name="size" value="{{ v.size }}" >
+                            <div class="invalid-feedback">
+                                Please enter pet size.
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="color" class="form-label">Color</label>
+                            <select class="form-select" id="color"  name="color" value="{{ v.color }}" required>
+                                <option value="">Choose...</option>
+                                <option value="Black">Black</option>
+                                <option value="White">White</option>
+                                <option value="Yellow">Yellow</option>
+                                <option value="Grey">Grey</option>
+                                <option value="Brown">Brown</option>
+                                <option value="Mixed">Mixed</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select pet's color.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea rows="5" class="form-control" id="description" placeholder="" name="description" value="{{ v.description }}"></textarea>
+                            <div class="invalid-feedback">
+                                Please enter the animal description.
+                            </div>
+                        </div>  
+                        
+                        <div class="col-12">
+                            <label for="weight" class="form-label">Weight(pounds)</label>
+                            <input type="number" class="form-control" id="weight" placeholder=""  name="weight" value="{{ v.weight }}" >
+                            <div class="invalid-feedback">
+                                Please enter the animal weight.
+                            </div>    
+                        </div>
+
+                        <div class="col-12">
+                            <label for="photo" class="form-label">Photo</label>
+                            <input type="file" class="form-control" id="photo" placeholder="Pets Images"  name="photo" value="{{ v.photo }}" >
+                            <div class="invalid-feedback">
+                                Please enter the animal photos.
+                            </div>    
+                        </div>
+
+                    </div>
+  
+                    <hr class="my-4">
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock content %}

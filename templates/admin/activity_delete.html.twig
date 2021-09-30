@@ -1,0 +1,33 @@
+{% extends "admin/masterAdmin.html.twig" %}
+{% block content %}
+
+{% if errorList %}
+    <ul class="errorMessage"  style="color:red;">
+      {% for error in errorList %}
+        <li>{{error}}</li>
+      {% endfor %}
+    </ul>
+{% endif %}
+
+<div class="col-md-9">
+  <div class="col-md-9">
+            <!-- Website Overview -->
+            <div class="panel panel-default">
+              <div class="panel-heading main-color-bg">
+                <h3 class="panel-title">Delete Activity</h3>
+              </div>
+              <div class="panel-body">
+              Activity theme: {{ list.theme }}"<br>
+              Description: {{ list.description }}"<br>
+              Type: {{ list.type}}<br>
+              Date: {{ list.givenTime }}<br>
+                <form  method="post">
+                  <p>Please confirm this action. It is irreversible</p>
+                  <input type="submit" value="Yes, delete the activity">
+                </form>
+            <a href="/admin/activity"><button>Cancel - go back</button></a>
+              </div>
+              </div>
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,84 @@
+{% extends "admin/masterAdmin.html.twig" %}
+{% block content %}
+
+<div class="col-md-9">
+          <div class="col-md-9">
+            <!-- Website Overview -->
+            <div class="panel panel-default">
+              <div class="panel-heading main-color-bg">
+                <h3 class="panel-title">Add User</h3>
+              </div>
+
+  {% if errorList %}
+    <ul class="errorMessage" style="color:red;">
+      {% for error in errorList %}
+        <li>{{error}}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  
+              <div class="panel-body">
+                <form class="needs-validation"  method="post" novalidate>
+                  <div class="form-group has-validation">
+                    <label  for="userName" class="form-label">Name*</label>
+                    <input class="form-control" id="userName" placeholder="" name="userName" value="{{ v.userName }}" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label  for="type" class="form-label">Type*</label>
+                        <select class="form-select" id="type" name="type" required>
+                            <option value="0">Choose...</option>                    
+                            <option value=1>Adoptor</option>
+                            <option value=2>Donator</option>
+                            <option value=3>Volunteer</option>
+                            <option value=4>Staff</option>
+                        </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label  for="email" class="form-label">Email*</label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com" name="email" value="{{ v.email }}" >
+                  </div>
+
+                  <div class="form-group">
+                    <label  for="phone" class="form-label">Phone*</label>
+                    <input type="text" class="form-control" id="phone" placeholder="(514)211-0555"  name="phone" value="{{ v.phone }}" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label  for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="1234 Main St"  name="address" value="{{ v.address }}">
+                  </div>
+
+                  <div class="form-group">
+                    <label>City</label>
+                        <select class="form-select" id="city"  name="city">
+                            <option value="">Choose...</option>
+                            <option value="Montreal">Montreal</option>
+                            <option value="Kirkland">Kirkland</option>
+                            <option value="Brossard">Brossard</option>
+                            <option value="Laval">Laval</option>
+                        </select>                
+                  </div>
+
+                  <div class="form-group">
+                    <label>Zipcode</label>
+                    <input type="text" class="form-control" id="zipcode" placeholder="H1X 2Y3"  name="zipcode" value="{{ v.zipcode }}">
+                  </div>
+
+                  <div class="form-group">
+                    <label  for="password" class="form-label">Password*</label>
+                    <input type="password" class="form-control" id="password" placeholder=""  name="password" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label  for="password1" class="form-label">Password(Repeat)*</label>
+                    <input type="password" class="form-control" id="password1" placeholder=""  name="password1" required>
+                  </div>
+
+                  <input type="submit" class="btn btn-default" value="Add">
+                </form>
+              </div>
+              </div>
+          </div>
+{% endblock content %}

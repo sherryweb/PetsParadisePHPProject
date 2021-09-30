@@ -1,0 +1,96 @@
+{% extends "staff.html.twig" %}
+
+{% block title %}Question Response{% endblock %} 
+
+{% block content %}
+
+{% if errorList %}
+<div class="container">
+    <ul>
+    {% for error in errorList %}
+        <li class="errorMessage">{{ error }}</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Question Response</h2>
+            <p class="lead">The first family that fits the animal’s needs will get to adopt them. ​All animals are sterilized, vaccinated, de-wormed, and micro-chipped before going up for adoption..</p>
+        </div>
+  
+        <div class="row g-3">
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="text-muted">Pet Information</span>
+                  <span class="badge bg-secondary rounded-pill">{{ p.id }}</span>
+                </h4>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="../{{p.ImageFolderPath}}" width="100%" height="225">
+                        <div class="card-body">
+                            <p class="card-text">{{p.description}}</p>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <p class="card-text">Breed: {{p.breed}}</p>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <p class="card-text">Birthday:  {{p.birthday}}</p>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <p class="card-text">Size: {{p.size}} inches.&nbsp;&nbsp;&nbsp; Weight: {{p.weight}} pounds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Pet Related Questions</h4>
+                <hr class="my-4">                
+                <div class="row g-3">
+                    <div class="col-md-5">
+                        <label for="type" class="form-label"><b>Pet Id</b></label>
+                        <p>{{ q.petId }}</p>
+                    </div>
+                    <div class="col-12">
+                        <label for="begindate" class="form-label"><b>QuestionDate</b></label>
+                        <p>{{ q.questionDate }}</p>
+                    </div>
+                    <div class="col-12">
+                        <label for="userid" class="form-label"><b>User ID</b></label>
+                        <p>{{ q.userId }}</p>
+                    </div>                      
+                    <div class="col-12">
+                        <label for="notes" class="form-label"><b>Questions</b></label>
+                        <p>{{ q.questions }}</p>
+                    </div> 
+                </div>
+                
+                <hr class="my-4">
+
+                <form class="needs-validation" method="POST" novalidate>
+                    <div class="row g-3">
+                        <h4 class="mb-3">Answers</h4>
+                        <div class="col-12">
+                            <textarea rows="3" class="form-control" id="answers" placeholder="" name="answers" value="{{ q.answers }}"></textarea>
+                            <div class="invalid-feedback">
+                                Please enter your answers.
+                            </div>
+                        </div> 
+                    </div>
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button>
+                </form>
+            </div>
+        
+        </div>
+
+        <hr class="my-4">
+    </main>
+
+{% endblock content %}

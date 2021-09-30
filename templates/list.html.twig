@@ -1,0 +1,89 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Pets ParaDise{% endblock %} 
+
+{% block content %}
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        {% if doglist %}
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for d in doglist %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <!--
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    -->
+                    <img src="../{{d.ImageFolderPath}}" width="100%" height="225">
+                    <div class="card-body">
+                        <p class="card-text">{{d.description}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/adoption?id={{d.id}}">Adoption</a></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/communicate?id={{d.id}}">LearnMore</a></button>
+                            </div>
+                            <small class="text-muted">{{d.breed}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <hr class="featurette-divider">
+        {% endif %}
+
+        {% if catlist %}
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for c in catlist %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <!--
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    -->
+                    <img src="../{{c.ImageFolderPath}}" width="100%" height="225">
+                    <div class="card-body">
+                        <p class="card-text">{{c.description}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/adoption?id={{c.id}}">Adoption</a></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/communicate?id={{c.id}}">LearnMore</a></button>
+                            </div>
+                            <small class="text-muted">{{c.breed}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <hr class="featurette-divider">
+        {% endif %}
+
+        {% if birdlist %}
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for b in birdlist %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <!--
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    -->
+                    <img src="../{{b.ImageFolderPath}}" width="100%" height="225">
+                    <div class="card-body">
+                        <p class="card-text">{{b.description}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/adoption?id={{b.id}}">Adoption</a></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/communicate?id={{b.id}}">LearnMore</a></button>
+                            </div>
+                            <small class="text-muted">{{b.breed}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock content %}

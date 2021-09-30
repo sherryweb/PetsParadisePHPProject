@@ -1,0 +1,139 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Registration{% endblock %} 
+
+{% block head %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('input[name=email]').keyup(function() {
+                var mail = $(this).val();
+                // console.log('username: ' + username);
+                // FIXME: special chars in username?
+                mail = encodeURIComponent(mail);
+                $('#emailExistMsg').load("/isemailexist/" + mail);
+            });
+        });
+    </script>
+{% endblock head %}
+
+{% block content %}
+{% if errorList %}
+<div class="container">
+    <ul>
+    {% for error in errorList %}
+        <li class="errorMessage">{{ error }}</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>User Registration</h2>
+            <p class="lead">If you are interested in any of our animals available for adoption, come in and meet them with your entire family (if you have a dog he/she must be present as well)</p>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="text-muted">Friendship forever</span>
+                  <span class="badge bg-secondary rounded-pill">{{ p.id }}</span>
+                </h4>
+        
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="../images/lovepet7.jpg" width="100%" width="100%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Register information</h4>
+                <hr class="my-4">
+                <form class="needs-validation" method="POST" novalidate>
+                    <div class="row g-3">
+ 
+                        <div class="col-12">
+                            <label for="username" class="form-label">Username</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" id="username" placeholder="Username" name="userName" value="{{ v.userName }}" required>
+                                <div class="invalid-feedback">
+                                    Your username is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com" name="email" value="{{ v.email }}">
+                            <span id="emailExistMsg" class="errorMessage"></span>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+  
+                        <div class="col-12">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" placeholder="(514) 111-2233"  name="phone" value="{{ v.phone }}" required>
+                            <div class="invalid-feedback">
+                                Please enter your phone.
+                            </div>
+                        </div>
+  
+                        <div class="col-12">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="Apartment or suite"  name="address" value="{{ v.address }}" >
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="city" class="form-label">City</label>
+                            <select class="form-select" id="city"  name="city" required>
+                                <option value="">Choose...</option>
+                                <option value="Montreal">Montreal</option>
+                                <option value="Kirkland">Kirkland</option>
+                                <option value="Brossard">Brossard</option>
+                                <option value="Laval">Laval</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+  
+                        <div class="col-md-3">
+                            <label for="zipcode" class="form-label">Zipcode</label>
+                            <input type="text" class="form-control" id="zipcode" placeholder="" name="zipcode" value="{{ v.zipcode }}" required>
+                            <div class="invalid-feedback">
+                                Zip code required.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="" name="password" value="{{ v.password }}" required>
+                            <div class="invalid-feedback">
+                                Please enter your password.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="password1" class="form-label">Password(Repeat)</label>
+                            <input type="password" class="form-control" id="password1" placeholder=""  name="password1" value="{{ v.repassword }}" required>
+                            <div class="invalid-feedback">
+                                Please enter your password again.
+                            </div>
+                        </div>
+                    </div>
+  
+                    <hr class="my-4">
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock content %}

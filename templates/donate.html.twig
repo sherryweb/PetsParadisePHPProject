@@ -1,0 +1,92 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Donation{% endblock %} 
+
+{% block content %}
+
+{% if errorList %}
+<div class="container">
+    <ul>
+    {% for error in errorList %}
+        <li class="errorMessage">{{ error }}</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Make a donation</h2>
+            <p class="lead">Your donation will help give veterinary care, food, shelter and love to an animal who needs it most. SPCA animals always need your ongoing support to help care for them.</p>
+        </div>
+  
+        <div class="row g-3">
+
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="text-muted">They are our family</span>
+                  <span class="badge bg-secondary rounded-pill">{{ p.id }}</span>
+                </h4>
+        
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="../images/lovepets.jpeg" width="100%" width="100%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-lg-8">
+                
+                <form class="needs-validation" method="POST" enctype="multipart/form-data" onsubmit="return checklogstatus();">
+                    <div class="row g-3">
+                        <h4 class="mb-3">Donation Type</h4>
+                        <div class="my-3">
+                            <div class="form-check">
+                              <input id="onetime" name="donationtype" type="radio" value=1 class="form-check-input" checked required>
+                              <label class="form-check-label" for="onetime">One-Time</label>
+                            </div>
+                            <div class="form-check">
+                              <input id="monthly" name="donationtype" type="radio" value=2 class="form-check-input" required>
+                              <label class="form-check-label" for="monthly">Monthly</label>
+                            </div>
+                        </div>
+
+                        <h4 class="mb-3">Donation Amount</h4>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="amt35" name="donationamount" value=35>
+                            <label class="form-check-label" for="same-amt35">$35</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="amt50" name="donationamount" value=50>
+                            <label class="form-check-label" for="amt50">$50</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="amt75" name="donationamount" value=75>
+                            <label class="form-check-label" for="amt75">$75</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="amt150" name="donationamount" value=150>
+                            <label class="form-check-label" for="amt150">$150</label>
+                        </div>  
+
+                        <h4 class="mb-3">Comments</h4>
+                        <div class="col-12">
+                            <textarea rows="5" class="form-control" id="comments" placeholder="" name="comments" value="{{ v.comments }}"></textarea>
+                            <div class="invalid-feedback">
+                                Please enter the your comments.
+                            </div>
+                        </div>  
+                        
+                    </div>
+  
+                    <hr class="my-4">
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock content %}
